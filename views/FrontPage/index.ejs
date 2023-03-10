@@ -1,0 +1,43 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <% if (studs.length > 0) { %>
+            <div class="time-table-container">
+                <div class="time-table container">
+                    <table>
+                        <thead>
+                              <tr>
+                                  <th>Name </th>
+                                  <th>Roll No.</th>
+                                  <th>Address</th>
+                                  <th>Institute</th>
+                                  <th>Course</th>
+                                  <th>Email</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                            <% for (let stud of studs) { %>
+                            <tr>
+                                <td><%= stud.Name %></td>
+                                <td><%= stud.Roll_No %></td>
+                                <td><%= stud.Address %></td>
+                                <td><%= stud.Institute %></td>
+                                <td><%= stud.Course %></td>
+                                <td><%= stud.Email %></td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+        <% } else { %>
+            <h3>No Student</h3>
+        <% } %>
+    </main>
+<%- include('../includes/end.ejs') %>
